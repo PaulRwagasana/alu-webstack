@@ -37,7 +37,7 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend cryptotechcode
+frontend icecoldcoding
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.icecoldcoding.tech/icecoldcoding.pem
     mode http
@@ -46,5 +46,5 @@ frontend cryptotechcode
 backend app
     balance roundrobin
     server 6362-web-01 54.224.252.175:80 check
-    server 6362-web-02 54.175.30.67 check
+    server 6362-web-02 54.175.30.67:80 check
 
